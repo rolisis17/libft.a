@@ -1,4 +1,4 @@
-SRCS = ft_putstr.c ft_rev_int_tab.c ft_sort_int_tab.c ft_strlen.c ft_vid_mod.c main.c
+SRCS = ft_putstr.c ft_rev_int_tab.c ft_sort_int_tab.c ft_strlen.c ft_vid_mod.c
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 NAME = libft.a
@@ -9,7 +9,7 @@ INCS = libft.h
 INCLUDE = -I
 DB = -g
 
-.c.o:
+.c.o: $(INCS)
 	$(CC) $(CFLAGS) -c $(<) -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
@@ -24,4 +24,4 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean
+re: fclean all
