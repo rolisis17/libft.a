@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   isalpha.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcella-d <dcella-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 14:01:34 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/10/24 15:58:20 by dcella-d         ###   ########.fr       */
+/*   Created: 2022/11/03 11:01:26 by dcella-d          #+#    #+#             */
+/*   Updated: 2022/11/09 12:20:42 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_isalpha(int c)
 {
-	int	f;
-	int	l;
-	int	swp;
-
-	f = 0;
-	l = (size - 1);
-	while (f < (size / 2))
-	{
-		swp = tab[f];
-		tab[f] = tab[l - f];
-		tab[l - f] = swp;
-		f++;
-	}
-	return ;
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
 }

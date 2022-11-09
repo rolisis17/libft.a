@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vid_mod.c                                       :+:      :+:    :+:   */
+/*   isascii.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcella-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 10:49:46 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/09/14 15:42:55 by dcella-d         ###   ########.fr       */
+/*   Created: 2022/11/03 11:01:26 by dcella-d          #+#    #+#             */
+/*   Updated: 2022/11/09 12:11:58 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_vid_mod(int a, int b, int *div, int *mod)
+int	ft_isascii(int c)
 {
-	if (a != 0)
-	{
-		*div = (a / b);
-		*mod = (a % b);
-	}
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

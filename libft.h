@@ -1,16 +1,41 @@
-#ifndef _LIBFT_H_
-#define _LIBFT_H_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 12:14:30 by dcella-d          #+#    #+#             */
+/*   Updated: 2022/11/09 15:02:46 by dcella-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putstr(char *str);
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	ft_rev_int_tab(int *tab, int size);
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
 
-void	ft_sorte_int_tab(int *tab, int size);
+int		ft_isalnum(int c);
 
-int     ft_strlen(char *str);
+int		ft_isalpha(int c);
 
-void	ft_swap(int *a, int *b);
+int		ft_isascii(int c);
 
-void	ft_vid_mod(int a, int b, int *div, int *mod);
+size_t	ft_strlen(const char *str);
+
+int		ft_isdigit(int c);
+
+int		ft_isprint(int c);
+
+char	*ft_strchr(const char *s, int c);
+
+char	*ft_strrchr(const char *s, int c);
+
+char	*ft_tolower(char *str);
+
+char	*ft_toupper(char *str);
 
 #endif

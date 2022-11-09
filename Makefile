@@ -1,4 +1,6 @@
-SRCS = ft_putstr.c ft_rev_int_tab.c ft_sort_int_tab.c ft_strlen.c ft_vid_mod.c
+SRCS =ft_strlen.c ft_toupper.c ft_tolower.c ft_strrchr.c \
+ft_strchr.c ft_isprint.c ft_isdigit.c ft_isascii.c ft_isalpha.c \
+ft_isalnum.c
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 NAME = libft.a
@@ -6,7 +8,6 @@ OBJS = $(SRCS:.c=.o)
 RM = rm -f
 LIBC = ar rc
 INCS = libft.h
-INCLUDE = -I
 DB = -g
 
 .c.o: $(INCS)
@@ -16,7 +17,6 @@ $(NAME): $(OBJS)
 	$(LIBC) $(NAME) $(OBJS)
 
 all: $(NAME)
-	$(CC) $(CFLAGS) $(DB) $(OBJS)
 
 clean: 
 	$(RM) $(OBJS)
