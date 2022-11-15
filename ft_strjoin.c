@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 13:31:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/11/15 14:37:07 by dcella-d         ###   ########.fr       */
+/*   Created: 2022/11/14 17:34:00 by dcella-d          #+#    #+#             */
+/*   Updated: 2022/11/15 14:38:57 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	size_t	f;
+	char	*s3;
 
-	i = -1;
-	while (s[++i])
-		;
-	return (i);
+	f = ft_strlen(s1) + ft_strlen(s2) + 1;
+	s3 = (char *)ft_calloc(f, sizeof(char));
+	if (!s3)
+		return (NULL);
+	ft_strlcpy(s3, (char *)s1, ft_strlen(s1) + 1);
+	ft_strlcat(s3, (char *)s2, f);
+	return (s3);
 }
-
-/*int main()
-{
-	printf("%i", ft_strlen("Fsome"));
-}*/

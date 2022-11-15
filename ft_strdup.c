@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 13:31:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/11/15 14:37:07 by dcella-d         ###   ########.fr       */
+/*   Created: 2022/11/14 10:36:32 by dcella-d          #+#    #+#             */
+/*   Updated: 2022/11/14 14:36:08 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*scp;
+	size_t	f;
 
-	i = -1;
-	while (s[++i])
-		;
-	return (i);
+	f = -1;
+	scp = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!scp)
+		return (NULL);
+	while (s[++f])
+		scp[f] = s[f];
+	return (scp);
 }
-
-/*int main()
-{
-	printf("%i", ft_strlen("Fsome"));
-}*/

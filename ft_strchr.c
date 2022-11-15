@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:01:26 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/11/09 16:58:54 by dcella-d         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:43:23 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 	return ((char *)&s[f]);
 }
-
 /* #include <string.h>
 
 int iTest = 1;
