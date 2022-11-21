@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:38:39 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/11/11 19:51:55 by dcella-d         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:15:24 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*s1;
 	unsigned char	c1;
 
-	f = 0;
+	f = -1;
 	s1 = (unsigned char *) s;
 	c1 = (unsigned char) c;
-	while (f < n)
-	{
+	while (++f < n)
 		if (s1[f] == c1)
-		{
 			break ;
-		}
-		f++;
-	}
 	if (f == n)
 		return (NULL);
 	return ((void *)&s1[f]);

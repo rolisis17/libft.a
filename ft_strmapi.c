@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 14:21:09 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/11/18 13:14:49 by dcella-d         ###   ########.fr       */
+/*   Created: 2022/11/16 14:51:07 by dcella-d          #+#    #+#             */
+/*   Updated: 2022/11/16 15:13:06 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	f;
+	unsigned int		u;
+	char				*strf;
 
-	f = -1;
-	if (!src && !dest)
+	u = -1;
+	strf = ft_calloc (ft_strlen(s) + 1, sizeof(char));
+	if (!strf || !s)
 		return (NULL);
-	while (++f < n)
-		((unsigned char *)dest)[f] = ((const char *)src)[f];
-	return (dest);
+	while (s[++u])
+		strf[u] = f(u, s[u]);
+	return (strf);
 }
