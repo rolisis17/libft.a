@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:49:07 by dcella-d          #+#    #+#             */
-/*   Updated: 2022/11/16 16:14:54 by dcella-d         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:36:34 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	f;
-
-	f = -1;
-	while (s[++f])
-		write (fd, &s[f], 1);
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

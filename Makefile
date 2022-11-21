@@ -18,8 +18,13 @@ LIBC = ar rcs
 INCS = libft.h
 DB = -g
 
-.c.o: $(INCS) pitfall
-all: $(NAME) $(BON_OBJ)
+.c.o: $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+$(NAME): $(OBJS)
+	$(LIBC) $(NAME) $(OBJS)
+
+all: $(NAME)
 
 bonus: $(BON_OBJ)
 	$(LIBC) $(NAME) $(BON_OBJ)
